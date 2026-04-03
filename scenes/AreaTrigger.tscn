@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ovs3xsf27gl8"]
+
+[ext_resource type="Script" uid="uid://bo617dlxqnyaj" path="res://scripts/Goal.gd" id="1_grq7m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sos67"]
+
+[node name="AreaTrigger" type="Area3D" unique_id=256749332]
+script = ExtResource("1_grq7m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=235712905]
+shape = SubResource("SphereShape3D_sos67")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=975054455]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://3bj4q2hq3e2l"]
+
+[ext_resource type="PackedScene" uid="uid://bjvvc4yryfqdq" path="res://scenes/Player.tscn" id="1_ymo8b"]
+[ext_resource type="PackedScene" uid="uid://dltqory4o1xju" path="res://scenes/World 1.tscn" id="2_gpsl1"]
+[ext_resource type="PackedScene" uid="uid://ovs3xsf27gl8" path="res://scenes/AreaTrigger.tscn" id="3_gpsl1"]
+[ext_resource type="PackedScene" path="res://scenes/PickupItem.tscn" id="4_2m2k4"]
+[ext_resource type="PackedScene" path="res://scenes/InventoryUI.tscn" id="5_ykyyo"]
+
+[node name="Level 1" type="Node3D" unique_id=1910014033]
+
+[node name="Player" parent="." unique_id=1050023755 instance=ExtResource("1_ymo8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.8328, -8.953953, 2.082446)
+
+[node name="World 1" parent="." unique_id=739267621 instance=ExtResource("2_gpsl1")]
+
+[node name="Goal Area" parent="." unique_id=256749332 instance=ExtResource("3_gpsl1")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -7.5349426, 0)
+sceneName = "Win Screen"
+
+[node name="Pit" parent="." unique_id=1205330570 instance=ExtResource("3_gpsl1")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 46.27359, -42.007446, 0)
+
+[node name="PickupItem" parent="." unique_id=6420871 instance=ExtResource("4_2m2k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.79323, -8.260972, 1.826964)
+
+[node name="InventoryUI" parent="." unique_id=2063298509 instance=ExtResource("5_ykyyo")]
+player_path = NodePath("../Player")
